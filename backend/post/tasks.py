@@ -6,7 +6,7 @@ from post.serializers import PostSerializer
 from rest_framework import status
 
 
-@shared_task(bind=True)
+@shared_task
 def file_upload_task(data):
     print("File Uploading")
     sleep(5)
@@ -15,7 +15,7 @@ def file_upload_task(data):
         posts_serializer.save()
         print("File Uploaded successfully")
         # return Response(posts_serializer.data)
-        return "celery Done"
+        return "Celery Done"
     else:
         print('error', posts_serializer.errors)
         return Response(posts_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
