@@ -1,0 +1,12 @@
+.App {
+  margin-top: 3em;
+  text-align: center;
+}
+#image{
+  margin-left: 5em;
+  padding: 10px;
+}
+
+input{
+  padding: 6px 10px;
+}
